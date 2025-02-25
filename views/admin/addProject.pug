@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+  h1 Add New Project
+  form(method="POST", action="/admin/projects/add")
+    label Title:
+    input(type="text", name="title", required)
+    br
+    label Description:
+    textarea(name="description", required)
+    br
+    label Technologies (comma separated):
+    input(type="text", name="technologies", required)
+    br
+    label Link:
+    input(type="text", name="link")
+    br
+    label Image URL:
+    input(type="text", name="image")
+    br
+    button(type="submit") Add Project
+  a(href="/admin/projects") Back to Projects

@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+  h1 Skills
+  a(href="/admin/skills/add") Add New Skill
+  ul
+    each skill in skills
+      li
+        strong #{skill.name} - #{skill.category} (#{skill.proficiency})
+        |  - 
+        a(href=`/admin/skills/edit/${skill._id}`) Edit
+        |  |  
+        a(href=`/admin/skills/delete/${skill._id}`) Delete
+  a(href="/admin") Back to Dashboard

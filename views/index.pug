@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title Portfolio
+    link(rel='stylesheet', href='/styles.css')
+  body
+    h1 My Portfolio
+    a(href='/admin') Admin Panel
+    
+    h2 Projects
+    each project in projects
+      div
+        h3 #{project.title}
+        p #{project.description}
+        p Technologies: #{project.technologies.join(', ')}
+    h2 Skills
+    each skill in skills
+      div
+        h3 #{skill.name}
+        p Category: #{skill.category}
+        p Proficiency: #{skill.proficiency}

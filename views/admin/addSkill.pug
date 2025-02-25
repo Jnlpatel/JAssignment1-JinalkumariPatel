@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+  h1 Add New Skill
+  form(method="POST", action="/admin/skills/add")
+    label Name:
+    input(type="text", name="name", required)
+    br
+    label Category:
+    input(type="text", name="category", required)
+    br
+    label Proficiency:
+    input(type="text", name="proficiency", required)
+    br
+    button(type="submit") Add Skill
+  a(href="/admin/skills") Back to Skills
