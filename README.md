@@ -34,8 +34,8 @@ This project is built with the following technologies:
 - **Express**: For routing and backend logic (if applicable).
 
 ## Setup
-To run this project locally, follow the steps below:
 copy 'env.copy' file and add your own ctredential
+To run this project locally, follow the steps below:
 
 ### Prerequisites
 Make sure you have the following installed:
