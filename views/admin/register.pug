@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Register 
+    body 
+        h1 Sign Up 
+        form(action="/admin/register" method="POST")
+            .form-element
+                label(for="user") Enter Username: 
+                input(type="text" id="user" name="user")
+            .form-element
+                label(for="pass") Create Password: 
+                input(type="password" id="pass" name="pass")
+            .form-element
+                button(type="submit" class="btn btn-primary") Sign Up
+            p 
+                Already registered? #[a(href="/admin/login") Login here]  

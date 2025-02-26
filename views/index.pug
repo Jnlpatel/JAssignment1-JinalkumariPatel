@@ -1,21 +1,44 @@
-doctype html
-html
-  head
-    title Portfolio
-    link(rel='stylesheet', href='/styles.css')
-  body
-    h1 My Portfolio
-    a(href='/admin') Admin Panel
-    
-    h2 Projects
-    each project in projects
-      div
-        h3 #{project.title}
-        p #{project.description}
-        p Technologies: #{project.technologies.join(', ')}
-    h2 Skills
-    each skill in skills
-      div
-        h3 #{skill.name}
-        p Category: #{skill.category}
-        p Proficiency: #{skill.proficiency}
+extends common/layout
+
+block layout-content
+    section#welcome.container.py-5.text-center
+        h1.text-center Hi, I'm Jinal Patel, a Passionate Frontend Web Developer!
+        p.lead.text-center I'm a dedicated developer focused on crafting innovative and user-friendly web applications.
+
+    section#projects.container.py-5
+        h2.text-center Projects
+        p.text-center Explore my work and latest projects.
+        div.text-center.mt-3
+            a.btn.btn-primary(href="/projects/list") View My Projects
+
+    section#experiences.container.py-5.bg-light
+        h2.text-center My Experiences
+        .row.justify-content-center
+            .col-md-8
+                .card.mb-4
+                    .card-body
+                        h5.card-title Frontend Web Developer (12/2021 - 03/2023)
+                        h6.card-subtitle.text-muted Navsari – Gj India.
+                        ul
+                            li Coded websites using HTML, CSS, JavaScript, and jQuery.
+                            li Enhanced user experience by implementing responsive web design and optimizing website performance.
+                            li Developed custom web applications, resulting in tailored solutions for client needs.
+
+    section#skills.container.py-5
+        h2.text-center My Skills
+        p.text-center Here are some of the technologies and tools I work with.
+        div.text-center.mt-3
+            a.btn.btn-secondary(href="/skills/list") View All Skills
+
+    section#about.container.py-5.bg-light
+        h2.text-center About Me
+        .row.justify-content-center
+            .col-md-8
+                p.text-center I enjoy solving real-world challenges using modern web technologies. I'm passionate about front-end development, creative problem-solving, and building seamless user experiences. Always eager to learn new technologies, I thrive on crafting efficient and scalable web solutions that make a difference.
+
+    section#contact.container.py-5.text-center
+        h2.text-center Let's Connect!
+        p Have an idea or project? Feel free to reach out!
+        div.text-center.mt-3
+            a.btn.btn-dark.mx-2(href="https://github.com/Jnlpatel" target="_blank") GitHub
+            a.btn.btn-primary.mx-2(href="https://www.linkedin.com/in/jinal-patel-a26852192/" target="_blank") LinkedIn

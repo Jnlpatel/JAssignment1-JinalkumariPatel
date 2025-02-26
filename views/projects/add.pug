@@ -1,0 +1,23 @@
+extends ../common/layout 
+
+block layout-content 
+    .container
+        h2.text-center.my-4.text-primary Create a New Project
+        
+        .card.shadow.p-4
+            form(action="/projects/add/submit", method="POST")
+                .mb-3
+                    label.form-label(for="name") Project Name:
+                    input.form-control(type="text" id="name" name="name" placeholder="Enter project name" required)
+                
+                .mb-3
+                    label.form-label(for="technology") Technologies Used:
+                    input.form-control(type="text" id="technology" name="technology" placeholder="Enter technologies used" required)
+                
+                .mb-3
+                    label.form-label(for="description") Project Description:
+                    textarea.form-control(id="description" name="description" rows="4" placeholder="Enter project description" required)
+                
+                .d-flex.justify-content-between.mt-4
+                    a.btn.btn-secondary(href="/") Back
+                    button.btn.btn-primary(type="submit") Submit Project

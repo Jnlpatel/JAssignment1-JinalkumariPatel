@@ -1,0 +1,26 @@
+extends ../common/layout 
+
+block layout-content 
+    .container
+        h2.text-center.my-4.text-primary Add a Skill
+        
+        .card.shadow.p-4
+            form(action="/skills/add/submit", method="POST")
+                .mb-3
+                    label.form-label(for="name") Skill Name:
+                    input.form-control(type="text" id="name" name="name" placeholder="JavaScript" required)
+                
+                .mb-3
+                    label.form-label(for="proficiency") Proficiency Level:
+                    select.form-select(id="proficiency" name="proficiency")
+                        option(value="Beginner") Beginner
+                        option(value="Intermediate") Intermediate
+                        option(value="Advanced") Advanced
+                
+                .mb-3
+                    label.form-label(for="yearsOfExperience") Years of Experience:
+                    input.form-control(type="number" id="yearsOfExperience" name="yearsOfExperience" placeholder="3" min="0" required)
+                
+                .d-flex.justify-content-between.mt-4
+                    a.btn.btn-secondary(href="/") Back
+                    button.btn.btn-primary(type="submit") Add Skill

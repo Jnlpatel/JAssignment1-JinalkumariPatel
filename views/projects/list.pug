@@ -1,0 +1,22 @@
+extends ../common/layout 
+
+block layout-content 
+    .container
+        h2.text-center.mb-4 Projects Overview
+        
+        .list-group
+            each proj in projects  
+                .list-group-item 
+                    h3.text-primary= proj.name
+                    p.mb-1 
+                        strong Technologies: 
+                        | #{proj.technology}
+                    p.mb-2 
+                        strong Description: 
+                        | #{proj.description}
+                    .d-flex.justify-content-between
+                        a.btn.btn-danger(href="/projects/delete/submit?projId=" + proj._id) Delete  
+    
+        .mt-4.d-flex.justify-content-center.gap-3
+            a.btn.btn-success(href="/projects/add") Add New Project  
+            a.btn.btn-secondary(href="/") Back

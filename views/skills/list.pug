@@ -1,0 +1,25 @@
+extends ../common/layout
+
+block layout-content
+    .container
+        h2.text-center.my-4 Skills Overview
+        
+        .d-flex.justify-content-end.mb-3
+            a.btn.btn-success(href="/skills/add") Add Skill
+
+        .row
+            each skill in skills 
+                .col-md-6.col-lg-4
+                    .card.shadow-sm.mb-4
+                        .card-body
+                            h5.card-title.text-primary= skill.name
+                            h6.card-subtitle.mb-2.text-muted Proficiency: #{skill.proficiency}
+                            p.card-text 
+                                strong Years of Experience:  
+                                | #{skill.yearsOfExperience}
+                            form(action="/skills/delete/submit" class="mt-2")
+                                input(type="hidden" name="skillId" value=skill._id)
+                                button(type="submit" class="btn btn-danger") Delete
+
+        .mt-4.d-flex.justify-content-center
+            a.btn.btn-secondary(href="/") Back
